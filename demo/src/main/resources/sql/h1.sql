@@ -110,6 +110,12 @@ select * from project;
 select * from module;
 select * from task;
 
+-- one to one
+select * from person;
+select * from persondetail;
+
+
+
 
 
 

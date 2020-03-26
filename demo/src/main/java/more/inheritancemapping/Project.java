@@ -1,4 +1,4 @@
-package inheritancemapping;
+package more.inheritancemapping;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

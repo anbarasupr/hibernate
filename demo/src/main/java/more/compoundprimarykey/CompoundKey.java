@@ -1,4 +1,4 @@
-package compoundprimarykey;
+package more.compoundprimarykey;
 
 import java.io.Serializable;
 

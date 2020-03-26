@@ -1,4 +1,4 @@
-package twoclassestoonetable;
+package more.twoclassestoonetable;
 import java.util.EnumSet;
 
 import org.hibernate.Session;
@@ -22,8 +22,8 @@ public class Main {
 		schemaExport.setHaltOnError(true);
 		schemaExport.setFormat(true);
 		schemaExport.setDelimiter(";");
-		schemaExport.setOutputFile("db-customer-embedded-schema.sql");
-		schemaExport.execute(EnumSet.of(TargetType.DATABASE, TargetType.STDOUT, TargetType.SCRIPT), SchemaExport.Action.BOTH, metadata.buildMetadata());
+		schemaExport.setOutputFile("src/main/resources/sql/generated/db-customer-embedded-schema.sql");
+		schemaExport.execute(EnumSet.of(TargetType.DATABASE, TargetType.STDOUT, TargetType.SCRIPT), SchemaExport.Action.NONE, metadata.buildMetadata());
 
 		SessionFactory factory = config.buildSessionFactory();
 		Session session = factory.getCurrentSession();

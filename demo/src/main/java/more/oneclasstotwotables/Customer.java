@@ -1,4 +1,4 @@
-package oneclasstotwotables;
+package more.oneclasstotwotables;
 import static javax.persistence.GenerationType.IDENTITY;
 
 import javax.persistence.Column;

@@ -1,4 +1,4 @@
-package inheritancemapping;
+package more.oneclasstotwotables;
 
 import java.util.EnumSet;
 
@@ -14,18 +14,16 @@ public class Main {
 
 	public static void main(String[] args) {
 
-		Configuration config = new Configuration().configure("hibernate.cfg2.xml").addAnnotatedClass(Project.class)
-				.addAnnotatedClass(Module.class).addAnnotatedClass(Task.class);
+		Configuration config = new Configuration().configure("hibernate.cfg2.xml").addAnnotatedClass(Customer.class);
 
 		MetadataSources metadata = new MetadataSources(
 				new StandardServiceRegistryBuilder().applySettings(config.getProperties()).build());
-		metadata.addAnnotatedClass(Project.class);
-		metadata.addAnnotatedClass(Module.class).addAnnotatedClass(Task.class);
+		metadata.addAnnotatedClass(Customer.class);
 		SchemaExport schemaExport = new SchemaExport();
 		schemaExport.setHaltOnError(true);
 		schemaExport.setFormat(true);
 		schemaExport.setDelimiter(";");
-		schemaExport.setOutputFile("db-inheritance-table-per-class-schema.sql");
+		schemaExport.setOutputFile("src/main/resources/sql/generated/db-customer-schema.sql");
 		schemaExport.execute(EnumSet.of(TargetType.DATABASE, TargetType.STDOUT, TargetType.SCRIPT),
 				SchemaExport.Action.NONE, metadata.buildMetadata());
 
@@ -33,21 +31,13 @@ public class Main {
 		Session session = factory.getCurrentSession();
 		session.beginTransaction();
 
-		Project project = new Project();
-		project.setProjectName("Hibernate Lessons");
+		Customer customer = new Customer();
+		customer.setCustomerName("anbu");
+		customer.setCustomerAddress("100 New Jersey");
+		customer.setCreditScore(780);
+		customer.setRewardPoints(10000);
 
-		Module module = new Module();
-		module.setProjectName("Spring Lessons");
-		module.setModuleName("AOP");
-
-		Task task = new Task();
-		task.setProjectName("Java Lessons");
-		task.setModuleName("Collections");
-		task.setTaskName("ArrayList");
-
-		session.save(project);
-		session.save(module);
-		session.save(task);
+		session.save(customer);
 		session.getTransaction().commit();
 		session.close();
 	}

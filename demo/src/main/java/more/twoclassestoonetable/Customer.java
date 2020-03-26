@@ -1,4 +1,4 @@
-package twoclassestoonetable;
+package more.twoclassestoonetable;
 
 import static javax.persistence.GenerationType.IDENTITY;
 

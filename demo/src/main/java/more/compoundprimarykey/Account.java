@@ -1,4 +1,4 @@
-package compoundprimarykey;
+package more.compoundprimarykey;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;

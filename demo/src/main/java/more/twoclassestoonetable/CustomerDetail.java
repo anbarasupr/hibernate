@@ -1,14 +1,6 @@
-package twoclassestoonetable;
+package more.twoclassestoonetable;
 
-import static javax.persistence.GenerationType.IDENTITY;
-
-import javax.persistence.Column;
 import javax.persistence.Embeddable;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.SecondaryTable;
-import javax.persistence.Table;
 
 /*
  * Combine Tow or More classes to one table using Embeddable
