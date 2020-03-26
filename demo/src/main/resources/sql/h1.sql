@@ -78,3 +78,41 @@ select * from category;
 select * from product;
 
 select * from invoice;
+
+
+-- Create Store Procedure
+DELIMITER $$
+CREATE PROCEDURE sp_findAll()
+BEGIN
+	SELECT * FROM product;
+END $$
+DELIMITER ;
+
+
+
+DELIMITER $$
+CREATE PROCEDURE sp_findBetween(min decimal, max decimal)
+BEGIN
+	SELECT * FROM product where price BETWEEN min and max;
+END $$
+DELIMITER ;
+
+
+
+
+select * from customer;
+
+
+select * from account;
+
+
+select * from project;
+select * from module;
+select * from task;
+
+
+
+
+
+
+
