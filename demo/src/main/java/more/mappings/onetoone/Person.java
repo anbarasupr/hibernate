@@ -1,4 +1,4 @@
-package more.mappings.onetomany;
+package more.mappings.onetoone;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;

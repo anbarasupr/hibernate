@@ -1,0 +1,56 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+
+	<session-factory>
+
+		<!-- JDBC Database connection settings -->
+		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/product_category?useSSL=false&amp;serverTimezone=UTC</property>
+		<property name="hibernate.connection.username">root</property>
+		<property name="hibernate.connection.password">root</property>
+
+		<!-- JDBC connection pool settings ... using built-in test pool -->
+		<property name="hibernate.connection.pool_size">3</property>
+		<property name="hibernate.enable_lazy_load_no_trans">true</property>
+
+		<!-- Select our SQL dialect -->
+		<!-- <property name="dialect">org.hibernate.dialect.MySQLDialect</property> -->
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</property>
+
+		<!-- Disable the second level cache -->
+		<!-- <property name="hibernate.cache.provide_class">org.hibernate.cache.NoCacheProvider</property> -->
+
+		<!-- Echo the SQL to stdout -->
+		<property name="hibernate.show_sql">true</property>
+
+		<property name="hibernate.format_sql">true</property>
+
+		<!-- Drop and create the database schema on startup -->
+		<property name="hibernate.hbm2ddl.auto">update</property>
+
+
+		<!-- Set the current session context -->
+		<property name="hibernate.current_session_context_class">thread</property>
+
+
+		<!--<property name="transaction.factory_class">org.hibernate.transaction.JDBCTransactionFactory</property> 
+			<property name="transaction.factory_class">org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorBuilderImpl</property> 
+			<property name="hibernate.transaction.coordinator_class">jdbc</property> -->
+
+
+		<!--<property name="hibernate.transaction.factory_class">org.hibernate.transaction.JTATransactionFactory</property> 
+			<property name="hibernate.transaction.coordinator_class">jta</property> <property 
+			name="hibernate.transaction.coordinator_class"> org.hibernate.resource.transaction.backend.jta.internal.JtaTransactionCoordinatorImpl 
+			</property> -->
+<!-- 		<property name="hibernate.transaction.coordinator_class"> -->
+<!-- 		jdbc -->
+<!-- 		</property> -->
+		<!-- <property name="hibernate.transaction.jta.platform">org.hibernate.engine.transaction.jta.platform.spi.JtaPlatform</property> -->
+		<!-- <property name="hibernate.transaction.jta.platform_resolver">org.hibernate.engine.transaction.jta.platform.spi.JtaPlatformResolver</property> -->
+<!-- 		<property name="hibernate.transaction.factory_class">org.hibernate.engine.transaction.spi.TransactionFactory		</property> -->
+	</session-factory>
+
+</hibernate-configuration>

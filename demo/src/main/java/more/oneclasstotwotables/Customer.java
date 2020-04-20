@@ -21,6 +21,7 @@ public class Customer {
 	@Id
 	@GeneratedValue(strategy = IDENTITY)
 	private int customerId;
+	
 	private String customerName;
 	
 	@Column(table="CustomerDetail")

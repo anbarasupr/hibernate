@@ -103,6 +103,11 @@ DELIMITER ;
 select * from customer;
 
 
+truncate table customer;
+select * from CustomerDetail;
+INSERT INTO  customer VALUES (NULL,'arasu');
+
+
 select * from account;
 
 
@@ -115,10 +120,20 @@ select * from person;
 select * from persondetail;
 
 
+use product_category;
 
+drop table customer;
 
+create table Customer (
+	customerId integer not null auto_increment,
+	customerName varchar(255),
+	primary key (customerId)
+)-- engine=MyISAM;
 
-
+-- NoTE : MyISAM doesnt support transaction in mysql
+select * from customer;
+		
+truncate table customer;
 
 
 

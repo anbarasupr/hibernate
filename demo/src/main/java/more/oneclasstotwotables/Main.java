@@ -25,7 +25,7 @@ public class Main {
 		schemaExport.setDelimiter(";");
 		schemaExport.setOutputFile("src/main/resources/sql/generated/db-customer-schema.sql");
 		schemaExport.execute(EnumSet.of(TargetType.DATABASE, TargetType.STDOUT, TargetType.SCRIPT),
-				SchemaExport.Action.NONE, metadata.buildMetadata());
+				SchemaExport.Action.BOTH, metadata.buildMetadata());
 
 		SessionFactory factory = config.buildSessionFactory();
 		Session session = factory.getCurrentSession();

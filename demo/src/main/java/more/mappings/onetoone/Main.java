@@ -1,4 +1,4 @@
-package more.mappings.onetomany;
+package more.mappings.onetoone;
 
 import java.util.EnumSet;
 
@@ -13,8 +13,11 @@ import org.hibernate.tool.schema.TargetType;
 public class Main {
 
 	public static void main(String[] args) {
+		//org.hibernate.engine.transaction.spi.TransactionFactory jta=null;
+		// org.hibernate.transaction.JTATransactionFactory jta=null;
+		org.hibernate.resource.transaction.backend.jta.internal.JtaTransactionCoordinatorImpl jta=null;
 
-		Configuration config = new Configuration().configure("hibernate.cfg2.xml")
+		Configuration config = new Configuration().configure("hibernate.cfg3.xml")
 				.addAnnotatedClass(Person.class).addAnnotatedClass(PersonDetail.class);
 
 		MetadataSources metadata = new MetadataSources(
